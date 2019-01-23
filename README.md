@@ -9,11 +9,10 @@ Questions to be reported:
 2. Who are the most popular article authors of all time?
 3. On which days did more than 1% of requests lead to errors?
 
-Technologies:
--->Python 2/Python 3
--->Psql
--->Vagrant
--->Virtual box
+Download:
+-->Python 2/Python 3(install --- https://www.python.org/) 
+-->Vagrant(install ---  https://www.vagrantup.com/)
+-->Virtual box(install --- https://www.virtualbox.org/wiki/Downloads)
 
 Procedure:
 -->vagrant box add ubuntu/trusty64
