@@ -13,13 +13,15 @@ query3 = """select * from thirdquery where per>1.0;"""
 
 # Opening and closing connections
 def query_db(sql_request):
-    conn = psycopg2.connect(database="news")
+    try:
+        conn = psycopg2.connect(database="news")
+    except psycopg2.Error as e:
+        print ("Unable to connect to the database")
     cursor = conn.cursor()
     cursor.execute(sql_request)
     results = cursor.fetchall()
     conn.close()
     return results
-
 
 # Print the top three articles of all time
 def toparticles():
