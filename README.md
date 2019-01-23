@@ -54,3 +54,21 @@ Loading the database:
 1. Once you are ready with setting up the virtual machine start running the project.
 2. Enter into project path .
 3. Run python file as python filename.py.
+
+Views:
+query 1:
+	create view firstquery as select title,count(title) as amount 
+	from articles,log where articles.slug=substr(log.path,10) group
+	 by title;
+
+query 2:
+	 create view secondquery as select authors.name,count(authors.name) 
+		as total from articles,log,authors where 
+	articles.slug=substr(log.path,10) and articles.author=authors.id group by name;
+
+query 3:
+
+	create view thirdquery as  select date(time),
+            round(100.0*sum(case log.status when '200 OK' then 0 else 1
+            end)/count(log.status) , 2) as per from log group by
+            date(time) order by per desc;
