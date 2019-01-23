@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import psycopg2
 
 # Database query 1: What are the three most popular articles of all time?
